@@ -1,10 +1,12 @@
 const refs = {
   counterEl: document.querySelector("#value"),
-  actionButtonsEl: document.querySelectorAll("#counter button"),
+  decrementBtn: document.querySelector('[data-action="decrement"]'),
+  incrementBtn: document.querySelector('[data-action="increment"]'),
 };
+console.log(refs.decrementBtn);
 let counterValue = 0;
-const decrementBtn = refs.actionButtonsEl[0];
-const incrementBtn = refs.actionButtonsEl[1];
+const decrementBtn = refs.decrementBtn;
+const incrementBtn = refs.incrementBtn;
 
 const handleDecrementAction = decrementBtn.addEventListener("click", () => {
   counterValue -= 1;

@@ -6,6 +6,8 @@ const refs = {
   inputEl: document.querySelector("input"),
 };
 
+let basicValue = 30;
+
 refs.createBtnEl.addEventListener("click", () => {
   let amountOfDivs = Number(refs.inputEl.value);
   createBoxes(amountOfDivs);
@@ -21,17 +23,18 @@ function createBoxes(amount) {
     const divEl = document.createElement("div");
     divEl.setAttribute(
       "style",
-      `width:${10 * i}px;height:${
-        10 * 1
-      }px;background-color:${getRandomHexColor()};`
+      `width:${basicValue}px;height:${basicValue}px;background-color:${getRandomHexColor()};`
     );
     elements.push(divEl);
+    basicValue += 10;
   }
   refs.boxesContainerEl.append(...elements);
 }
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
 function destroyBoxes() {
