@@ -3,7 +3,7 @@ const refs = {
   decrementBtn: document.querySelector('[data-action="decrement"]'),
   incrementBtn: document.querySelector('[data-action="increment"]'),
 };
-console.log(refs.decrementBtn);
+
 let counterValue = 0;
 const decrementBtn = refs.decrementBtn;
 const incrementBtn = refs.incrementBtn;
