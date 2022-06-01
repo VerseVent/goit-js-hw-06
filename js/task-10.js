@@ -8,13 +8,13 @@ const refs = {
 
 let basicValue = 30;
 
+refs.removeBtnEl.addEventListener("click", () => {
+  destroyBoxes();
+});
+
 refs.createBtnEl.addEventListener("click", () => {
   let amountOfDivs = Number(refs.inputEl.value);
   createBoxes(amountOfDivs);
-});
-
-refs.removeBtnEl.addEventListener("click", () => {
-  destroyBoxes();
 });
 
 function createBoxes(amount) {
